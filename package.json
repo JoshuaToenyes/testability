@@ -1,6 +1,6 @@
 {
   "name": "testability",
-  "description": "Testing utility for replacing dependencies with mock versions at test-time, without modifying the source code.",
+  "description": "Testing utility for replacing dependencies with mock versions at test-time, without modifying the original source.",
   "author": "Joshua Toenyes <joshua.toenyes@me.com>",
   "version": "1.0.0-a.1",
   "license": "MIT",
