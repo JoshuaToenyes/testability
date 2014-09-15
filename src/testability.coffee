@@ -47,7 +47,7 @@ class Testability
   # Loads the passed module and mock dependencies. Mock dependencies loaded
   # in a call to `load` will be given precedence over the same module path
   # loaded globally via `mock()` or `mocks()`.
-  load: (module, mocks) ->
+  require: (module, mocks) ->
     filename = resolve module
     dirname = path.dirname filename
     exports = {}
@@ -66,19 +66,13 @@ class Testability
 
 
   # Registers a single mock module.
-  mock: (module, mock) ->
+  replace: (module, mock) ->
     @_mocks[module] = mock
     return @
 
 
-  # Registers a group of mock modules.
-  mocks: (mocks) ->
-    for module, mock of mocks
-      @mock module, mock
-
-
   # Clears all registered mock modules.
-  clear: ->
+  restoreAll: ->
     @_mocks = {}
 
 
